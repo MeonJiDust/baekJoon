@@ -1,5 +1,6 @@
 package basicMath02;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Num9020 {
@@ -27,17 +28,22 @@ public class Num9020 {
 					isTrue[k] = true;
 				}
 			}
-			for(int j = 0; j < isTrue.length; j++) {
+			ArrayList<Integer> list = new ArrayList<>();
+			
+			for(int j = 0, k = 0; j < isTrue.length; j++) {
 				
 				int copy_n = n;
 				if(isTrue[j] == false) {
 					copy_n -= j;
 					if(isTrue[copy_n] == false) {
-						System.out.println(j + " " + copy_n);
-						break;
+						list.add(j);
+						k++;
+						if(copy_n - j < 0) {
+							System.out.println(list.get(k - 2) + " " + (n - list.get(k - 2)));
+							break;
+						}
 					}
 				}
-				//소수간의 차이가 최소가 되어야함..
 			}
 		}
 		
