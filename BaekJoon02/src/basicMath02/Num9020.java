@@ -1,6 +1,5 @@
 package basicMath02;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Num9020 {
@@ -28,21 +27,15 @@ public class Num9020 {
 					isTrue[k] = true;
 				}
 			}
-			ArrayList<Integer> list = new ArrayList<>();
+			int q = n / 2;
+			int p = n / 2;
 			
-			for(int j = 0, k = 0; j < isTrue.length; j++) {
-				
-				int copy_n = n;
-				if(isTrue[j] == false) {
-					copy_n -= j;
-					if(isTrue[copy_n] == false) {
-						list.add(j);
-						k++;
-						if(copy_n - j < 0) {
-							System.out.println(list.get(k - 2) + " " + (n - list.get(k - 2)));
-							break;
-						}
-					}
+			for(int j = 0; j < (n / 2) + 1; j++) {
+				if(isTrue[q] == false && isTrue[p] == false) {
+					System.out.println(q + " " + p);
+					break;
+				}else {
+					q--; p++;
 				}
 			}
 		}
