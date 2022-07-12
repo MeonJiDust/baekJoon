@@ -25,14 +25,15 @@ public class Num11729 {
 		
 		if(n == 1) {
 			//System.out.println(start + " " + to);
-			sb.append(start + " " + to + "\n");
+			sb.append(start + "막대에서 " + to + "막대로 n은" + n + "\n");
+			//sb.append(start + " " + to + "\n");
 			return;
 		}
 		
 		hanoi(n - 1, start, to, mid);
 		
 		//System.out.println(start + " " + to);
-		sb.append(start + " " + to + "\n");
+		sb.append(start + "막대에서 " + to + "막대로 n은" + n + "\n");
 		
 		hanoi(n - 1, mid, start, to);
 	}
