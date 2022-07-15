@@ -28,7 +28,7 @@ public class Num2447 {
 	}
  
 	static void star(int x, int y, int N, boolean blank) {
- 
+  
 		// 공백칸일 경우
 		if (blank) {
 			for (int i = x; i < x + N; i++) {
