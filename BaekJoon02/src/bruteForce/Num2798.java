@@ -21,44 +21,38 @@ public class Num2798 {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		int[] arr = new int[n];
-		boolean isTrue = false;
-		
-		ArrayList<Integer> list = new ArrayList<Integer>();
 		
 		st = new StringTokenizer(br.readLine(), " ");
 		
 		for(int i = 0; i < n; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
+		int result = blackJack(arr, n, m);
+		System.out.println(result);
 		
-		for(int i = 0; i < n; i++) {
-			for(int j = 0; j < n; j++) {
-				for(int k = 0; k < n; k++) {
+	}
+
+	private static int blackJack(int[] arr, int n, int m) {
+		// TODO Auto-generated method stub
+		int result = 0;
+		
+		for(int i = 0; i <= arr.length - 3; i++) {
+			for(int j = i + 1; j <= arr.length - 2; j++) {
+				for(int k = j + 1; k < arr.length; k++) {
 					
-					if(list.contains(arr[i] + arr[j] + arr[k])) {
-						continue;
-					}else {
-						list.add(arr[i] + arr[j] + arr[k]);
+					int temp = arr[i] + arr[j] + arr[k];
+					
+					if(temp == m) {
+						return temp;
 					}
 					
+					if(result < temp && temp < m) {
+						result = temp;
+					}
 				}
 			}
 		}
-		int[] list_arr = new int[list.size()];
-		for(int i = 0; i < list.size(); i++) {
-			list_arr[i] = list.get(i);
-		}
-		Arrays.sort(list_arr);
-		int max = list_arr[0];
-		
-		for(int i = 0; i < list_arr.length; i++) {
-			if(max > m) {
-				break;
-			}else {
-				max = list_arr[i];
-			}
-		}
-		System.out.println(max);
+		return result;
 	}
 
 }
