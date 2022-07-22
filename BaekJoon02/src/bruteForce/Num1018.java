@@ -55,8 +55,8 @@ public class Num1018 {
 		
 		boolean TF = arr[x][y];
 		
-		for(int i = 0; i < end_x; i++) {
-			for(int j = 0; j < end_y; j++) {
+		for(int i = x; i < end_x; i++) {
+			for(int j = y; j < end_y; j++) {
 				
 				if(arr[i][j] != TF) {
 					count++;
