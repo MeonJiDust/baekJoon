@@ -21,9 +21,7 @@ public class Num1436 {
 		while(count != n) {
 			
 			num++;
-			
 			if(String.valueOf(num).contains("666")) {
-				System.out.printf("n: %d, num: %d, count: %d\n", n, num, count);
 				count++;
 			}
 		}
