@@ -1,6 +1,11 @@
 package sort;
 
 import java.util.Arrays;
+/*
+ * 	시간복잡도: O(N²)
+ * 근데 리스트 안의 데이터가 거의 정렬되어있는 상태라면 매우 빠르게 동작하여서 O(N)의 시간복잡도를 지님
+ * 
+ */
 
 public class Insertion_sort {
 
