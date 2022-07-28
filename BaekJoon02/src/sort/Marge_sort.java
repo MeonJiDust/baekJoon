@@ -17,7 +17,7 @@ public class Marge_sort {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		arr = new int[]{1, 9, 8, 5, 4, 2, 3, 7, 6};
+		arr = new int[]{5,3,4,7,1,2};
 		temp_arr = new int[arr.length];
 		
 		System.out.println(Arrays.toString(arr));
@@ -26,18 +26,21 @@ public class Marge_sort {
 
 	private static void marge_sort(int start, int end) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("start: " + start + " end: " + end);
 		if(start < end) {
 			int mid = (start + end) / 2;
 			
+			System.out.println("! star: " + start + " mid: " + mid);
 			marge_sort(start, mid);
+			System.out.println(Arrays.toString(arr));
 			System.out.println("here! start:" + start + " end: " + end + " arr: " + Arrays.toString(temp_arr));
+			System.out.println("!! mid + 1: " + (mid+1) + " end: " + end);
 			marge_sort(mid + 1, end);
 			System.out.println("here!! start:" + start + " end: " + end + " arr: " + Arrays.toString(temp_arr));
 			
 			int p = start;
 			int q = mid + 1;
-			int idx = p;
+			int idx = p; //새로운 배열의 인덱스
 			System.out.println("p:" + p + " q: " + q + " mid: " + mid + " idx: " + idx);
 			
 			while(p <= mid || q <= end) {
