@@ -19,7 +19,7 @@ public class Merge_sort_2 {
 
 	private static void merge_sort(int[] a, int left, int right) {
 		// TODO Auto-generated method stub
-		
+		 
 		/*
 		 * left == right -> 부분 리스트가 1개의 원소만 갖고 있는 경우
 		 * 더이상 쪼갤 수 없으므로 return
