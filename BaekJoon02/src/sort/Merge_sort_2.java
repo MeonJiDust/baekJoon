@@ -1,13 +1,19 @@
 package sort;
 
+import java.util.Arrays;
+
 public class Merge_sort_2 {
 
 	private static int[] sorted;
+	private static int count = 0;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		int[] a = {5, 4, 3, 2, 1};
+		merge_sort(a);
 		
+		System.out.println(Arrays.toString(sorted));
 	}
 	
 	public static void merge_sort(int[] a) {
@@ -28,9 +34,11 @@ public class Merge_sort_2 {
 		
 		int mid = (left + right) / 2;
 		
+		count++;
 		merge_sort(a, left, mid); // 절반 중 왼쪽 부분 리스트 (left ~ mid)
+		count++;
 		merge_sort(a, mid + 1, right); // 절반 중 오른쪽 부분 리스트 (mid + 1 ~ right)
-		
+		count++;
 		merge(a, left, mid, right); // 병합 작업
 	}
 	
@@ -40,6 +48,7 @@ public class Merge_sort_2 {
 		int q = mid + 1; // 오른쪽 부분리스트의 시작점
 		int idx = left; // 채워 넣을 배열의 인덱스
 		
+		System.out.println("count: " + (count) + " p: " + p + " q: " + q + " idx: " + idx);
 		while(p <= mid && q <= right) {
 			
 			/*
@@ -87,6 +96,8 @@ public class Merge_sort_2 {
 		for(int i = left; i <= right; i++) {
 			a[i] = sorted[i];
 		}
+		
+		System.out.println(Arrays.toString(sorted));
 	}
 	
 	
