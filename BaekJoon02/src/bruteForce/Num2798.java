@@ -20,7 +20,7 @@ public class Num2798 {
 		
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
-		int[] arr = new int[n];//
+		int[] arr = new int[n];//  
 		
 		st = new StringTokenizer(br.readLine(), " ");
 		
